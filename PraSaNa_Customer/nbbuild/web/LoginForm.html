@@ -1,0 +1,54 @@
+<style>
+.font{
+font-family:Lucida Calligraphy;
+font-size:80px;
+}
+</style>
+
+<script>
+            function validateForm()
+            {
+                var UN=document.forms["LoginForm"]["UserName"].value;
+                var Pw=document.forms["LoginForm"]["Password"].value;
+              
+                var s1="",s2="";
+                flag=0;
+
+                if (UN==null || UN=="")
+                {
+                    s1="Please Enter the User Name\n\n";
+                    flag=1;
+                    
+                }
+                if (Pw==null || Pw=="")
+                {
+                    s2="Please Enter the Password\n\n";
+                    flag=1;
+                }       
+                
+                switch(flag)
+                {
+                
+                case 1:
+                alert(s1+""+s2);
+                return false;
+                break;
+                
+                default:
+                return true;
+                break;
+                
+
+                }
+            }
+  </script>
+
+
+<center>
+<form name="LoginForm" action="Customer_Login_Validate.jsp" onsubmit="return validateForm()" method="post">
+<h1 class="font">Login    Form</h1>
+<pre>User Name    :      <input type="text" name="UserName" size="15" maxlength="20">  </pre>
+<pre>Password     :      <input type="text" name="Password" size="15" maxlength="20">  </pre>
+<input type="submit" name="Login" Value="Login">
+</form>
+</center>
